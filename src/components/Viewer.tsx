@@ -19,7 +19,7 @@ import Model from './Model'
 
 function Spinner() {
 	return (
-		<div className="absolute inset-0 flex items-center justify-center bg-background/80 backdrop-blur-sm">
+		<div className="absolute inset-0 flex items-center justify-center">
 			<Loader2 className="size-16 animate-spin text-primary" />
 		</div>
 	)
@@ -40,8 +40,8 @@ export default function ModelViewer() {
 	}
 
 	return (
-		<div className="w-full h-screen flex flex-col relative">
-			<div className="p-4 absolute z-50">
+		<div className="w-full h-screen flex items-center flex-col relative bg-gray-950">
+			<div className="pt-4 absolute z-50">
 				<Select
 					value={selectedAnimation}
 					onValueChange={setSelectedAnimation}
@@ -59,7 +59,7 @@ export default function ModelViewer() {
 					</SelectContent>
 				</Select>
 			</div>
-			<div className="flex-grow relative">
+			<div className="w-full flex-grow relative">
 				<Canvas shadows>
 					<PerspectiveCamera makeDefault position={[0, 1, 3]} />
 					<Model
