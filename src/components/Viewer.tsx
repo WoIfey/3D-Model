@@ -19,8 +19,8 @@ import Model from './Model'
 
 function Spinner() {
 	return (
-		<div className="absolute inset-0 flex items-center justify-center">
-			<Loader2 className="size-16 animate-spin text-primary" />
+		<div className="absolute inset-0 flex items-center justify-center bg-gray-800">
+			<Loader2 className="size-20 animate-spin" />
 		</div>
 	)
 }
@@ -40,7 +40,7 @@ export default function ModelViewer() {
 	}
 
 	return (
-		<div className="w-full h-screen flex items-center flex-col relative bg-gray-950">
+		<div className="w-full h-screen flex items-center flex-col relative bg-gray-800">
 			<div className="pt-4 absolute z-50">
 				<Select
 					value={selectedAnimation}
