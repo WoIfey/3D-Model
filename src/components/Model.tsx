@@ -3,12 +3,19 @@ import { useEffect, useRef } from 'react'
 import { useGLTF, useAnimations } from '@react-three/drei'
 import * as THREE from 'three'
 
+type Model = {
+	selectedAnimation: string
+	setSelectedAnimation: (animation: string) => void
+	setAnimationNames: (names: string[]) => void
+	onLoad: (center: THREE.Vector3) => void
+}
+
 export default function Model({
 	selectedAnimation,
 	setSelectedAnimation,
 	setAnimationNames,
 	onLoad,
-}: any) {
+}: Model) {
 	const modelRef = useRef(null)
 	const { scene, animations } = useGLTF('/model.glb')
 	const { actions, names } = useAnimations(animations, modelRef)
