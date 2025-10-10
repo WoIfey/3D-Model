@@ -8,6 +8,7 @@ import {
 } from '@react-three/drei'
 import { Spinner } from '@/components/ui/spinner'
 import { Vector3 } from 'three'
+import type { OrbitControls as OrbitControlsTypes } from 'three-stdlib'
 import Model from './Model'
 import { Tabs, TabsList, TabsTrigger } from '@/components/ui/tabs'
 import {
@@ -36,7 +37,7 @@ export default function ModelViewer() {
 	const [selectedAnimation, setSelectedAnimation] = useState<string>('')
 	const [animationNames, setAnimationNames] = useState<string[]>([])
 	const [isLoading, setIsLoading] = useState(true)
-	const controlsRef = useRef<any>(null)
+	const controlsRef = useRef<OrbitControlsTypes>(null)
 
 	const handleModelLoad = (center: Vector3) => {
 		if (controlsRef.current) {
