@@ -83,7 +83,7 @@ export default function ModelViewer() {
 					</Select>
 				</div>
 			</div>
-			<div className="w-full flex-grow relative">
+			<div className="w-full grow relative">
 				<Canvas shadows>
 					<PerspectiveCamera makeDefault position={[0, 1, 3]} fov={50} />
 					<fog attach="fog" args={['#0a0a0f', 10, 20]} />
