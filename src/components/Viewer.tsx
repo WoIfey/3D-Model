@@ -10,7 +10,7 @@ import { Spinner } from '@/components/ui/spinner'
 import { Vector3 } from 'three'
 import type { OrbitControls as OrbitControlsTypes } from 'three-stdlib'
 import Model from './Model'
-import { Tabs, TabsList, TabsTrigger } from '@/components/ui/tabs'
+import { Tabs, TabsContent, TabsList, TabsTrigger } from '@/components/ui/tabs'
 import {
 	Select,
 	SelectContent,
@@ -18,6 +18,10 @@ import {
 	SelectTrigger,
 	SelectValue,
 } from '@/components/ui/select'
+import Link from 'next/link'
+import { Button } from './ui/button'
+import { ArrowLeftIcon } from 'lucide-react'
+import { GitHub } from './ui/github'
 
 function Loader({ isLoading }: { isLoading: boolean }) {
 	return (
@@ -52,15 +56,15 @@ export default function ModelViewer() {
 
 	return (
 		<div className="w-full h-screen flex items-center flex-col relative bg-black">
-			<div className="fixed mt-10 z-50">
+			<div className="fixed mt-4 z-50 flex flex-col justify-center items-center gap-2">
 				<div className="hidden sm:block">
 					<Tabs value={selectedAnimation} onValueChange={setSelectedAnimation}>
-						<TabsList className="h-auto rounded-none border-b border-border bg-transparent p-0">
+						<TabsList className="h-auto rounded-none border-b bg-transparent p-0">
 							{animationNames.map(name => (
 								<TabsTrigger
 									key={name}
 									value={name}
-									className="relative rounded-none py-2 after:absolute after:inset-x-0 after:bottom-0 after:h-0.5 data-[state=active]:bg-transparent data-[state=active]:shadow-none data-[state=active]:after:bg-primary"
+									className="relative rounded-none border-none py-2 after:absolute after:inset-x-0 after:bottom-0 after:h-0.5 data-[state=active]:bg-transparent data-[state=active]:shadow-none data-[state=active]:after:bg-primary"
 								>
 									{name}
 								</TabsTrigger>
@@ -81,6 +85,20 @@ export default function ModelViewer() {
 							))}
 						</SelectContent>
 					</Select>
+				</div>
+				<div className="flex gap-2">
+					<Link href="https://wolfey.me">
+						<Button variant="outline">
+							<ArrowLeftIcon className="size-4" />
+							wolfey.me
+						</Button>
+					</Link>
+					<Link href="https://github.com/Wufler/3D-Model" target="_blank">
+						<Button variant="outline">
+							<GitHub className="size-4" />
+							Repository
+						</Button>
+					</Link>
 				</div>
 			</div>
 			<div className="w-full grow relative">

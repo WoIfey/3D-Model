@@ -13,8 +13,23 @@ const geistMono = Geist_Mono({
 })
 
 export const metadata: Metadata = {
-	title: '3D Model',
-	description: 'Next.js with 3D model',
+	title: 'buh',
+	description: '3D model of myself',
+	openGraph: {
+		title: 'buh',
+		description: '3D model of myself',
+		url: 'https://me.wolfey.me',
+		images: [
+			{
+				url: 'https://wolfey.s-ul.eu/b10aOpwh',
+				width: 1280,
+				height: 720,
+				alt: 'whos that!',
+			},
+		],
+		locale: 'en_US',
+		type: 'website',
+	},
 }
 
 export default function RootLayout({
