@@ -21,7 +21,7 @@ export const metadata: Metadata = {
 		url: 'https://me.wolfey.me',
 		images: [
 			{
-				url: 'https://wolfey.s-ul.eu/b10aOpwh',
+				url: 'https://up.wolfey.me/l6UBUOeu',
 				width: 1280,
 				height: 720,
 				alt: 'whos that!',
